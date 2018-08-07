@@ -2,13 +2,25 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <title>Basketball Team</title>
+  <title>Team Name: params[:name]</title>
  </head>
  <body>
- 
-
-
+   <% params.each do |key,value| %>
+      <% if key == "name" %>
+        <h1><%= "Team Name: #{value}" %></h1>
+      <% elsif key == "coach"%>
+        <h2><%= "Coach: #{value}" %></h2>
+      <% elsif key == 'pg'%>
+          <h2><%= "Point Guard: #{value}" %></h2>
+      <% elsif key == 'sg'%>
+          <h2><%= "Shooting Guard: #{value}" %></h2>
+      <% elsif key == 'sf'%>
+          <h2><%= "Small Forward: #{value}" %></h2>
+      <% elsif key == 'pf'%>
+          <h2><%= "Power Forward: #{value}" %></h2>
+      <% else %>
+         <h2><%= "Center: #{value}" %></h2>
+      <% end %>
+   <% end %>
  </body>
 </html>
-
-
